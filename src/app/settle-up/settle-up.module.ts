@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SettleUpComponent } from './settle-up/settle-up.component';
+import { SettleUpComponent } from './settle-up.component';
 
 
 
