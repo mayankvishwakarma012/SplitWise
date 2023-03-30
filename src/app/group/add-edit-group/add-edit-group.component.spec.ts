@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddFriendsComponent } from './add-friends.component';
+import { AddEditGroupComponent } from './add-edit-group.component';
 
-describe('AddFriendsComponent', () => {
-  let component: AddFriendsComponent;
-  let fixture: ComponentFixture<AddFriendsComponent>;
+describe('AddEditGroupComponent', () => {
+  let component: AddEditGroupComponent;
+  let fixture: ComponentFixture<AddEditGroupComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddFriendsComponent ]
+      declarations: [ AddEditGroupComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AddFriendsComponent);
+    fixture = TestBed.createComponent(AddEditGroupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

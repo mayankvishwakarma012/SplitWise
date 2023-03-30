@@ -1,16 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AddExpenseComponent } from './add-expense/add-expense.component';
-import { EditExpenseComponent } from './edit-expense/edit-expense.component';
 import { ViewExpenseListComponent } from './view-expense-list/view-expense-list.component';
+import { AddEditExpenceComponent } from './add-edit-expence/add-edit-expence.component';
 
 
 
 @NgModule({
   declarations: [
-    AddExpenseComponent,
-    EditExpenseComponent,
-    ViewExpenseListComponent
+    ViewExpenseListComponent,
+    AddEditExpenceComponent
   ],
   imports: [
     CommonModule

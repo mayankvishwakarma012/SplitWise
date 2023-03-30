@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TransactionListComponent } from './transaction-list/transaction-list.component';
+import { TransactionListComponent } from './transaction-list.component';
 
 
 

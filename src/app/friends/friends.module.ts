@@ -1,16 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AddFriendsComponent } from './add-friends/add-friends.component';
-import { EditFriendsComponent } from './edit-friends/edit-friends.component';
 import { ViewFriendsListComponent } from './view-friends-list/view-friends-list.component';
+import { AddEditFriendsComponent } from './add-edit-friends/add-edit-friends.component';
 
 
 
 @NgModule({
   declarations: [
-    AddFriendsComponent,
-    EditFriendsComponent,
-    ViewFriendsListComponent
+    ViewFriendsListComponent,
+    AddEditFriendsComponent
   ],
   imports: [
     CommonModule

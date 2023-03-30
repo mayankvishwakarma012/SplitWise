@@ -1,16 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AddGroupComponent } from './add-group/add-group.component';
-import { EditGroupComponent } from './edit-group/edit-group.component';
 import { ViewGroupListComponent } from './view-group-list/view-group-list.component';
+import { AddEditGroupComponent } from './add-edit-group/add-edit-group.component';
 
 
 
 @NgModule({
   declarations: [
-    AddGroupComponent,
-    EditGroupComponent,
-    ViewGroupListComponent
+    ViewGroupListComponent,
+    AddEditGroupComponent
   ],
   imports: [
     CommonModule
