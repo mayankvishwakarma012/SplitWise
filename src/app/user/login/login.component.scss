@@ -1,20 +1,24 @@
+    // login form css
     .container {
         width: 100vw;
         padding: 20px 0;
         display: flex;
         align-items: center;
         justify-content: center;
+        // inner form div
         .inner {
             width: 40%;
             padding: 20px;
             display: block;
             border: 1px solid #888888;
             box-shadow: 2px 3px 2px #888888;
+            // form container design
             .form-container {
                 .form-control {
                     border: none;
                     display: flex;
                     flex-direction: column;
+                    // form text box style
                     input[type=text],
                     input[type=password] {
                         width: 100%;
@@ -26,6 +30,7 @@
                         border-radius: 4px;
                         box-sizing: border-box;
                     }
+                    // form button style
                     button {
                         width: 100%;
                         background-color: #18A582;
@@ -49,6 +54,7 @@
                 }
             }
         }
+        // responsive view for diffrent screen breakpoints
         @media screen and (max-width:1000px) {
             .inner {
                 width: 70%;
