@@ -3,22 +3,26 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { Routes, RouterModule } from '@angular/router';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 const dashboardRoutes : Routes = [
-  { path: '',component: LoginComponent,children:[
-    { path: 'signup', component: RegisterComponent }
-  ] },
-
+  { path: '',component: LandingPageComponent},
+  { path: 'login',component: LoginComponent},
+  { path: 'signup', component: RegisterComponent }
 
 ]
 
 @NgModule({
   declarations: [
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    LandingPageComponent
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     RouterModule.forChild(dashboardRoutes)
   ],
   exports:[

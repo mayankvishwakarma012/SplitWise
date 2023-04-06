@@ -1,11 +1,49 @@
-<nav>
-    <!-- demo links to show routings -->
-    <a routerLink="/dashboard">Dashboard</a><br>
-    <a routerLink="/expense">Expense</a><br>
-    <a routerLink="/friends">Friends</a><br>
-    <a routerLink="/group">Group</a> <br>
-    <a routerLink="/settleup">Settle Up</a><br>
-    <a routerLink="/transaction">Transaction</a><br>
-    <a routerLink="/login">User</a>
+<!-- navigation bar  -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+
+        <!-- logo  -->
+        <a class="navbar-brand" href="#">SplitWise</a>
+
+        <!-- toggler button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- nav bar links -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <a class="nav-link text-light" routerLink="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-primary ml-md-2" type="button" routerLink="/signup">Sign Up</button>
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>
+<!-- menus after click on bars -->
+<div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+        <ul class="navbar-nav ">
+            <li class="nav-item">
+                <a class="nav-link text-light" routerLink="/login">Login</a>
+            </li>
+            <li class="nav-item">
+                <button class="btn btn-primary ml-md-2" type="button" routerLink="/signup">Sign Up</button>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- show component in routing -->
 <router-outlet></router-outlet>
+
+
+<!-- footer  -->
+<footer class="container py-3 my-4">
+    <hr>
+
+    <p class="text-center text-muted">SplitWise</p>
+</footer>

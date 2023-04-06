@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: 'group', loadChildren: () => import('./group/group.module').then(m => m.GroupModule) },
   { path: 'settleup', loadChildren: () => import('./settle-up/settle-up.module').then(m => m.SettleUpModule) },
   { path: 'transaction', loadChildren: () => import('./transaction/transaction.module').then(m => m.TransactionModule) },
-  { path: 'login', loadChildren: () => import('./user/user.module').then(m => m.UserModule) }
+  { path: '', loadChildren: () => import('./user/user.module').then(m => m.UserModule) }
 ];
 
 @NgModule({

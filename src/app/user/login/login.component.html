@@ -1,4 +1,31 @@
-<p>login works!</p>
-<!-- demo links to show routings -->
-<a routerLink="./signup">register</a>
-<router-outlet></router-outlet>
+<div class="container">
+    <div class="inner">
+
+        <form class="form-container" [formGroup]="loginForm">
+            <h3>Login </h3>
+            <hr>
+            <div class="form-control">
+                <label for="email">Email :</label>
+                <input type="text" name="email" id="email" formControlName="email" placeholder="Enter your email">
+                <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)" class="text-danger">
+                    <div *ngIf="loginForm.get('email')?.errors?.['required']">Email is required</div>
+                    <div *ngIf="loginForm.get('email')?.errors?.['email']">Email is invalid</div>
+                </div>
+            </div>
+            <div class="form-control">
+                <label for="password">Password :</label>
+                <input type="password" name="password" id="password" formControlName="password" placeholder="Enter password">
+                <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)" class="text-danger">
+                    <div *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</div>
+                </div>
+            </div>
+
+
+            <div class="form-control">
+                <button type="submit">Login</button>
+            </div>
+
+            <div class="form-control"><a href="#">Forgot your password</a></div>
+        </form>
+    </div>
+</div>
