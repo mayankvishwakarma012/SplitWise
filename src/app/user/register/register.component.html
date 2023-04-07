@@ -1,1 +1,66 @@
-<p>register works.</p>
+<!-- container for register form component-->
+<div class="container">
+
+    <!--  inner container with 40% of screen width-->
+    <div class="inner">
+
+        <!-- form controls container -->
+        <form class="form-container" [formGroup]="registerForm">
+            <h3>Register</h3>
+            <hr>
+            <!-- textbox for name-->
+            <div class="form-control">
+                <label for="name">Name :</label>
+                <input type="text" name="name" id="name" formControlName="name" placeholder="Enter your name.">
+                <!-- validation alerts -->
+                <div *ngIf="registerForm.get('name')?.invalid && (registerForm.get('name')?.dirty || registerForm.get('name')?.touched)" class="text-danger">
+                    <div *ngIf="registerForm.get('name')?.errors?.['required']">Name is required</div>
+                </div>
+            </div>
+
+            <!-- textbox for email-->
+            <div class="form-control">
+                <label for="email">Email :</label>
+                <input type="text" name="email" id="email" formControlName="email" placeholder="Enter your email">
+
+                <!-- validation alerts -->
+                <div *ngIf="registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)" class="text-danger">
+                    <div *ngIf="registerForm.get('email')?.errors?.['required']">Email is required</div>
+                    <div *ngIf="registerForm.get('email')?.errors?.['email']">Email is invalid</div>
+                </div>
+            </div>
+
+            <!-- textbox for password-->
+            <div class="form-control">
+                <label for="password">Password :</label>
+                <input type="password" name="password" id="password" formControlName="password" placeholder="Enter password">
+
+                <!-- validation alerts -->
+                <div *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)" class="text-danger">
+                    <div *ngIf="registerForm.get('password')?.errors?.['required']">Password is required</div>
+                </div>
+            </div>
+
+            <!-- textbox for password-->
+            <div class="form-control">
+                <label for="cnfpassword">Confirm Password :</label>
+                <input type="password" name="cnfpassword" id="cnfpassword" formControlName="cnfpassword" placeholder="Confirm password">
+
+                <!-- validation alerts -->
+                <div *ngIf="registerForm.get('cnfpassword')?.invalid && (registerForm.get('cnfpassword')?.dirty || registerForm.get('cnfpassword')?.touched)" class="text-danger">
+                    <div *ngIf="registerForm.get('cnfpassword')?.errors?.['required']">Password confirmation is required</div>
+                </div>
+
+                <div *ngIf="registerForm.get('cnfpassword')?.valid && (registerForm.get('cnfpassword')?.dirty || registerForm.get('cnfpassword')?.touched)" class="text-danger">
+                    <div *ngIf="registerForm.get('password')?.value != registerForm.get('cnfpassword')?.value" class="text-danger">Password not matched</div>
+                </div>
+            </div>
+
+            <!-- submit button for sign up  -->
+            <div class="form-control">
+                <button type="submit">Sign up</button>
+            </div>
+
+        </form>
+    </div>
+</div>
