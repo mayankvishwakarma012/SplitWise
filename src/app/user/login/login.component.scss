@@ -1,73 +1,69 @@
-    // login form css
-    .container {
-        width: 100vw;
-        padding: 20px 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        // inner form div
-        .inner {
-            width: 40%;
-            padding: 20px;
-            display: block;
-            border: 1px solid #888888;
-            box-shadow: 2px 3px 2px #888888;
-            // form container design
-            .form-container {
-                .form-control {
+// imports
+@import '../../common-scss/color.scss';
+// -----------------------------------------------login form css------------------------------------------------
+.container {
+    width: 100vw;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    //--------------------------------------------- inner form div----------------------------------------------
+    .inner {
+        width: 40%;
+        padding: 20px;
+        display: block;
+        border: 1px solid $border-form;
+        box-shadow: 2px 3px 2px $border-form;
+        // --------------------------------------form container design-------------------------------------------
+        .form-container {
+            .form-control {
+                border: none;
+                display: flex;
+                flex-direction: column;
+                // ------------------------------form text box style----------------------------------------------
+                input[type=text],
+                input[type=password] {
+                    width: 100%;
+                    padding: 8px;
+                    margin: 8px 0;
+                    display: inline-block;
+                    border: 1px solid $white;
+                    border-bottom: 1px solid $border-input-text;
+                    border-radius: 4px;
+                    box-sizing: border-box;
+                }
+                // -----------------------------form button style-------------------------------------------------
+                button {
+                    width: 100%;
+                    background-color: $green;
+                    color: $white;
+                    padding: 8px 16px;
+                    margin: 8px 0;
                     border: none;
-                    display: flex;
-                    flex-direction: column;
-                    // form text box style
-                    input[type=text],
-                    input[type=password] {
-                        width: 100%;
-                        padding: 8px;
-                        margin: 8px 0;
-                        display: inline-block;
-                        border: 1px solid white;
-                        border-bottom: 1px solid #ccc;
-                        border-radius: 4px;
-                        box-sizing: border-box;
-                    }
-                    // form button style
-                    button {
-                        width: 100%;
-                        background-color: #18A582;
-                        color: white;
-                        padding: 8px 16px;
-                        margin: 8px 0;
-                        border: none;
-                        border-radius: 4px;
-                        cursor: pointer;
-                         :hover {
-                            opacity: 0.9;
-                        }
-                    }
-                    a {
-                        text-decoration: none;
-                        color: #18A582;
-                         :hover {
-                            color: #04a87f;
-                        }
-                    }
+                    border-radius: 4px;
+                    cursor: pointer;
+                }
+                a {
+                    text-decoration: none;
+                    color: $green;
                 }
             }
         }
-        // responsive view for diffrent screen breakpoints
-        @media screen and (max-width:1000px) {
-            .inner {
-                width: 70%;
-            }
-        }
-        @media screen and (max-width:800px) {
-            .inner {
-                width: 80%;
-            }
-        }
-        @media screen and (max-width:600px) {
-            .inner {
-                width: 90%;
-            }
+    }
+    // ---------------------------------------responsive view for diffrent screen breakpoints--------------------
+    @media screen and (max-width:1000px) {
+        .inner {
+            width: 70%;
         }
     }
+    @media screen and (max-width:800px) {
+        .inner {
+            width: 80%;
+        }
+    }
+    @media screen and (max-width:600px) {
+        .inner {
+            width: 90%;
+        }
+    }
+}
