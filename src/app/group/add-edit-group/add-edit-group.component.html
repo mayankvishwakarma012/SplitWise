@@ -1,1 +1,71 @@
-<p>add-edit-group works!</p>
+<!-- Group Add and Edit Form  -->
+<form [formGroup]="addEditGroup">
+
+    <!-- Form Header  -->
+    <div class="modal-header">
+
+        <!-- If clicked on add button -->
+        <h1 class="modal-title fs-5" id="exampleModalLabel" *ngIf="router.url == '/group/add'">Add Details</h1>
+
+        <!-- If clicked on add button -->
+        <h1 class="modal-title fs-5" id="exampleModalLabel" *ngIf="router.url == '/group/edit'">Edit Details</h1>
+
+        <!-- close button -->
+        <button type="button" class="btn-close" data-bs-dismiss="modal" routerLink="/group">.</button>
+    </div>
+
+    <!-- Form body -->
+    <div class="modal-body">
+
+        <!-- Form Controls -->
+
+        <!-- group name -->
+        <div class="mb-3">
+            <label for="group-name" class="form-label fs-5">Group Name: </label>
+            <input type="text" class="form-control" id="group-name" placeholder="Enter Group Name" formControlName="groupName">
+        </div>
+
+        <!-- members -->
+        <div class="mb-3" formArrayName="members">
+            <div class="row">
+                <div class="col"><label for="add-member" class="form-label fs-5">Add Member:</label></div>
+                <div class="col-auto"><button class="btn btn-outline-success" type="button" (click)="addMembers()">Add+</button></div>
+            </div>
+            <div class="row mt-2" *ngFor="let member of members.controls; let i=index" formGroupName="{{i}}">
+                <div class="col">
+                    <input type="text" class="form-control" id="name" placeholder="Member's Name" formControlName="name">
+                </div>
+                <div class="col">
+                    <input type="email" class="form-control" id="email" placeholder="Member's Email" formControlName="email">
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-outline-danger" type="button" (click)="deleteMember(i)" *ngIf="members.length > 1">X</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- group type -->
+        <div class="mb-3">
+            <label for="group-type" class="form-label fs-5">Group Type: </label>
+            <select class="form-select w-50" id="group-type" formControlName="groupType">
+            <option value="home" selected>Home</option>
+            <option value="trip">Trip</option>
+            <option value="couple">Couple</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <!-- simplified debts -->
+        <div class="mb-3 form-check form-switch">
+            <label class="form-check-label" for="simplified-debt">Simplified debts.</label>
+            <input class="form-check-input" type="checkbox" id="simplified-debt" formControlName="simplifiedDebt">
+        </div>
+    </div>
+
+    <!-- submit button -->
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" routerLink="/group">Close</button>
+        <button type="submit" class="btn btn-primary" *ngIf="router.url == '/group/add'">Save changes</button>
+        <button type="submit" class="btn btn-primary" *ngIf="router.url == '/group/edit'">Save changes</button>
+    </div>
+</form>
