@@ -7,8 +7,8 @@ import { Routes, RouterModule } from '@angular/router';
 const dashboardRoutes : Routes = [
   { path: '', component: ViewGroupListComponent, children:[
     { path: 'add', component: AddEditGroupComponent },
-  { path: 'edit', component: AddEditGroupComponent },
-  { path: 'view', component: ViewGroupListComponent }
+    { path: 'edit', component: AddEditGroupComponent },
+    { path: 'view', component: ViewGroupListComponent }
   ] },
 
 
