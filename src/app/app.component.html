@@ -7,11 +7,11 @@
 
         <!-- toggler button -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <!-- nav bar links -->
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <!-- nav bar links if not login -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav" *ngIf="router.url != '/dashboard' && router.url != '/group'">
             <ul class="navbar-nav">
                 <li class="nav-item ">
                     <a class="nav-link text-light" routerLink="/login">Login</a>
@@ -21,11 +21,29 @@
                 </li>
             </ul>
         </div>
+
+        <!-- nav bar links after login -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav" *ngIf="router.url == '/dashboard' || router.url == '/group'">
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <div class="dropdown">
+                        <button class="btn text-light dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown">
+                    Dropdown button
+                  </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" routerLink="/">Logout</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
 <!-- menus after click on navbar menu -->
 <div class="collapse" id="navbarToggleExternalContent">
-    <div class="bg-dark p-4">
+    <!-- if not login then show this -->
+    <div class="bg-dark p-4" *ngIf="router.url != '/dashboard' && router.url != '/group'">
         <ul class="navbar-nav ">
             <li class="nav-item">
                 <a class="nav-link text-light" routerLink="/login">Login</a>
@@ -35,13 +53,18 @@
             </li>
         </ul>
     </div>
+
+    <!-- if login done then show this  -->
+    <div class="bg-dark p-4" *ngIf="router.url == '/dashboard' || router.url == '/group'">
+
+        <ul class="navbar-nav text-white">
+            <li class="nav-item"><a class="dropdown-item" href="#">Profile</a></li>
+            <li class="nav-item"><a class="dropdown-item" routerLink="/">Logout</a></li>
+        </ul>
+
+    </div>
+
 </div>
 
 <!-- show component in routing -->
 <router-outlet></router-outlet>
-
-<!-- footer  -->
-<footer class="container py-3 my-4">
-    <hr>
-    <p class="text-center text-muted">SplitWise</p>
-</footer>
