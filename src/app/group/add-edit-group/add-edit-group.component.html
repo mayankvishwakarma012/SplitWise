@@ -5,10 +5,10 @@
     <div class="modal-header">
 
         <!-- If clicked on add button -->
-        <h1 class="modal-title fs-5" id="exampleModalLabel" *ngIf="router.url == '/group/add'">Add Details</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel" *ngIf="isCurrentUrl('/group/add')">Add Details</h1>
 
         <!-- If clicked on add button -->
-        <h1 class="modal-title fs-5" id="exampleModalLabel" *ngIf="router.url == '/group/edit'">Edit Details</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel" *ngIf="isCurrentUrl('/group/edit')">Edit Details</h1>
 
         <!-- close button -->
         <button type="button" class="btn-close" data-bs-dismiss="modal" routerLink="/group">.</button>
