@@ -5,10 +5,10 @@
     <div class="modal-header">
 
         <!-- If clicked on add button -->
-        <h1 class="modal-title fs-5" id="exampleModalLabel" *ngIf="isCurrentUrl('/group/add')">Add Details</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel" *ngIf="isGroupAddActive">Add Details</h1>
 
         <!-- If clicked on add button -->
-        <h1 class="modal-title fs-5" id="exampleModalLabel" *ngIf="isCurrentUrl('/group/edit')">Edit Details</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel" *ngIf="isGroupEditActive">Edit Details</h1>
 
         <!-- close button -->
         <button type="button" class="btn-close" data-bs-dismiss="modal" routerLink="/group">.</button>
@@ -65,6 +65,6 @@
     <!-- submit button -->
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" routerLink="/group">Close</button>
-        <button type="submit" class="btn btn-primary" (click)="isCurrentUrl('/group/add') ? onSubmit() : onUpdate()">Save changes</button>
+        <button type="submit" class="btn btn-primary" (click)="isGroupAddActive ? onSubmit() : onUpdate()">Save changes</button>
     </div>
 </form>

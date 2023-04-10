@@ -1,17 +1,45 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-add-edit-group',
   templateUrl: './add-edit-group.component.html',
   styleUrls: ['./add-edit-group.component.scss']
 })
-export class AddEditGroupComponent {
+export class AddEditGroupComponent implements OnInit{
+  isGroupAddActive !: boolean;
+  currentUrl !: string;
+  isGroupEditActive !: boolean;
 
-  isCurrentUrl(url: string): boolean {
-    return this.router.url === url;
+
+  ngOnInit(): void {
+    this.router.events
+    .pipe(filter((e): e is NavigationEnd => e instanceof NavigationEnd))
+    .subscribe((event: NavigationEnd) => {
+          this.currentUrl = event.url;
+
+          if(this.currentUrl == '/group/add'){
+            this.isGroupAddActive = true;
+          }
+          else{
+            this.isGroupAddActive = false;
+          }
+
+          if(this.currentUrl == '/group/edit'){
+            this.isGroupEditActive = true;
+          }
+          else{
+            this.isGroupEditActive = false;
+          }
+
+  });
+
+
   }
+
+
 
   // Add Edit Form group
   addEditGroup !: FormGroup;
@@ -29,6 +57,7 @@ export class AddEditGroupComponent {
       ])
     });
   }
+
 
   // getter for Form array control
   get members (){
