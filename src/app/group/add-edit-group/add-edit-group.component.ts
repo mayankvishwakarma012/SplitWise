@@ -9,6 +9,9 @@ import { filter } from 'rxjs';
   styleUrls: ['./add-edit-group.component.scss']
 })
 export class AddEditGroupComponent implements OnInit{
+
+  groupTypes = ['Home', 'Trip' , 'Couple', 'Other'];
+
   isGroupAddActive !: boolean;
   currentUrl !: string;
   isGroupEditActive !: boolean;
@@ -47,7 +50,7 @@ export class AddEditGroupComponent implements OnInit{
   constructor(private fb: FormBuilder , public router : Router) {
     this.addEditGroup = this.fb.group({
       groupName: ['', Validators.required],
-      groupType:['home'],
+      groupType:['Home'],
       simplifiedDebt:[false],
       members: this.fb.array([
         this.fb.group({

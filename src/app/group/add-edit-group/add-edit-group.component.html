@@ -48,10 +48,8 @@
         <div class="mb-3">
             <label for="group-type" class="form-label fs-5">Group Type: </label>
             <select class="form-select w-50" id="group-type" formControlName="groupType">
-            <option value="home" selected>Home</option>
-            <option value="trip">Trip</option>
-            <option value="couple">Couple</option>
-            <option value="other">Other</option>
+            <option *ngFor="let groupType of groupTypes" [value]="groupType">{{groupType}}</option>
+
           </select>
         </div>
 
