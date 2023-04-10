@@ -9,4 +9,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'SplitWise';
   constructor(public router : Router){}
+
+  dropdownMenus = ['Profile','Logout'];
+
+  isCurrentUrl(url: string): boolean {
+    return this.router.url === url;
+  }
 }

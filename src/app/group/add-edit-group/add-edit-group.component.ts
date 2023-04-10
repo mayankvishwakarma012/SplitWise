@@ -9,6 +9,10 @@ import { Router } from '@angular/router';
 })
 export class AddEditGroupComponent {
 
+  isCurrentUrl(url: string): boolean {
+    return this.router.url === url;
+  }
+
   // Add Edit Form group
   addEditGroup !: FormGroup;
 
@@ -44,6 +48,13 @@ export class AddEditGroupComponent {
   // delete members fields dynamicly
   deleteMember(i : number){
     this.members.removeAt(i);
+  }
+
+  onSubmit(){
+    // function for add new group
+  }
+  onUpdate(){
+    // funtion for edit details for group
   }
 
 }

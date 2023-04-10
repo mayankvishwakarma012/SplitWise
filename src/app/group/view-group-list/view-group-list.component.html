@@ -12,12 +12,16 @@
                 Group Name
             </h3>
             <small>Click to view details.</small>
+
+
         </div>
 
         <!-- section body -->
         <div class="collapse" id="collapseGroup">
             <div class="card card-body">
                 <h3>Members:</h3>
+                <!-- List of members added to this group gs here  -->
+
                 <div class="d-flex">
 
                     <!-- Edit group button -->
@@ -31,14 +35,15 @@
         <!-- expenses of this roup will be displayed here -->
         <div class="card card-body">
             <h3>Expenses:</h3>
+
         </div>
     </section>
 
-    <!--Add/edit Form Modal -->
+    <!--Edit Form Modal -->
     <div class="modal fade" id="addEditForm" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
-                <router-outlet></router-outlet>
+                <app-add-edit-group></app-add-edit-group>
             </div>
         </div>
     </div>
