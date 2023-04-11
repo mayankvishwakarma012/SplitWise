@@ -1,17 +1,25 @@
 <!-- group view component to show on dashboard -->
-<div class="wrapper p-2">
+<div class="wrapper">
 
     <!-- section to collapse  -->
     <section class="container-fluid">
 
         <!-- section Header -->
         <div class="card card-header" data-bs-toggle="collapse" data-bs-target="#collapseGroup">
+            <div class="row">
+                <div class="col">
+                    <!-- group name  -->
+                    <h3>
+                        Group Name
+                    </h3>
+                    <small>Click to view details.</small>
+                </div>
+                <div class="col text-end">
+                    <button class="btn btn-danger" routerLink="/dashboard/settleup">Settle Up</button>
+                </div>
+            </div>
 
-            <!-- group name  -->
-            <h3>
-                Group Name
-            </h3>
-            <small>Click to view details.</small>
+
 
 
         </div>
