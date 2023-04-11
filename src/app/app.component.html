@@ -44,8 +44,10 @@
 <!-- menus after click on navbar menu -->
 <div class="collapse" id="navbarToggleExternalContent">
     <!-- if not login then show this -->
+
     <div class="bg-dark p-4 " *ngIf="isLoginSignupActive">
         <ul class="navbar-nav container">
+
             <li class="nav-item" *ngIf="!isLoginActive">
                 <button class="btn btn-primary ml-md-2" routerLink="/login">Login</button>
             </li>
@@ -56,10 +58,12 @@
     </div>
 
     <!-- if login done then show this  -->
+
     <div class="bg-dark" *ngIf="!isLoginSignupActive">
 
         <ul class="navbar-nav text-white container  p-4">
             <li class="nav-item" *ngFor="let dropdownMenu of dropdownMenus"><a class="dropdown-item" href="#">{{dropdownMenu}}</a></li>
+
         </ul>
 
     </div>

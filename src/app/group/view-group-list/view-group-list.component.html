@@ -1,5 +1,50 @@
-<p>view-group-list works!</p>
-<!-- demo links to show routings -->
-<a routerLink="./add">add</a><br>
-<a routerLink="./edit">edit</a>
-<router-outlet></router-outlet>
+<!-- group view component to show on dashboard -->
+<div class="wrapper p-2">
+
+    <!-- section to collapse  -->
+    <section class="container-fluid">
+
+        <!-- section Header -->
+        <div class="card card-header" data-bs-toggle="collapse" data-bs-target="#collapseGroup">
+
+            <!-- group name  -->
+            <h3>
+                Group Name
+            </h3>
+            <small>Click to view details.</small>
+
+
+        </div>
+
+        <!-- section body -->
+        <div class="collapse" id="collapseGroup">
+            <div class="card card-body">
+                <h3>Members:</h3>
+                <!-- List of members added to this group gs here  -->
+
+                <div class="d-flex">
+
+                    <!-- Edit group button -->
+                    <button class="btn btn-primary m-1" type="button" routerLink="/group/edit" data-bs-toggle="modal" data-bs-target="#addEditForm">Edit</button>
+                    <button class="btn btn-primary m-1" type="button">Delete</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- expenses of this roup will be displayed here -->
+        <div class="card card-body">
+            <h3>Expenses:</h3>
+
+        </div>
+    </section>
+
+    <!--Edit Form Modal -->
+    <div class="modal fade" id="addEditForm" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <app-add-edit-group></app-add-edit-group>
+            </div>
+        </div>
+    </div>
+</div>
