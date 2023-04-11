@@ -1,1 +1,41 @@
-<p>add-edit-friends works!</p>
+<!-- Group Add and Edit Form  -->
+<form [formGroup]="addEditFriend">
+
+    <!-- Form Header  -->
+    <div class="modal-header">
+
+        <!-- If clicked on add button -->
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Invite Friend</h1>
+        <!-- close button -->
+        <button type="button" class="btn-close" data-bs-dismiss="modal">.</button>
+    </div>
+
+    <!-- Form body -->
+    <div class="modal-body">
+
+        <!-- Form Controls -->
+
+        <!-- group name -->
+        <div class="mb-3">
+            <label for="friend-name" class="form-label fs-5">Friends Email: </label>
+            <input type="email" class="form-control" id="friend-name" placeholder="Enter Group Name" formControlName="friendName">
+        </div>
+
+        <!-- message  -->
+        <div class="mb-3">
+            <label for="textarea" class="form-label fs-5">Message: </label>
+            <div class="form-floating">
+                <textarea class="form-control h-5" placeholder="Leave a comment here" id="textarea" formControlName="message"></textarea>
+
+            </div>
+        </div>
+
+
+
+        <!-- submit button -->
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Send invite</button>
+        </div>
+    </div>
+</form>

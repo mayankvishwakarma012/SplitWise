@@ -47,7 +47,6 @@
 
     <div class="bg-dark p-4 " *ngIf="isLoginSignupActive">
         <ul class="navbar-nav container">
-
             <li class="nav-item" *ngIf="!isLoginActive">
                 <button class="btn btn-primary ml-md-2" routerLink="/login">Login</button>
             </li>
@@ -63,7 +62,6 @@
 
         <ul class="navbar-nav text-white container  p-4">
             <li class="nav-item" *ngFor="let dropdownMenu of dropdownMenus"><a class="dropdown-item" href="#">{{dropdownMenu}}</a></li>
-
         </ul>
 
     </div>
