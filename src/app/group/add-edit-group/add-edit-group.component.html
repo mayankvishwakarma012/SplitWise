@@ -4,12 +4,8 @@
     <!-- Form Header  -->
     <div class="modal-header">
 
-        <!-- If clicked on add button -->
-        <h1 class="modal-title fs-5" id="exampleModalLabel" *ngIf="isGroupAddActive">Add Details</h1>
-
-        <!-- If clicked on add button -->
-        <h1 class="modal-title fs-5" id="exampleModalLabel" *ngIf="isGroupEditActive">Edit Details</h1>
-
+        <!-- if clicked on add/ edit  -->
+        <h1 class="modal-title fs-5" id="exampleModalLabel">{{formHeading}}</h1>
         <!-- close button -->
         <button type="button" class="btn-close" data-bs-dismiss="modal" routerLink="/group">.</button>
     </div>

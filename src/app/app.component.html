@@ -59,8 +59,9 @@
     <div class="bg-dark p-4" *ngIf="!isLoginSignupActive">
 
         <ul class="navbar-nav text-white">
-            <li class="nav-item"><a class="dropdown-item" href="#">Profile</a></li>
-            <li class="nav-item"><a class="dropdown-item" routerLink="/">Logout</a></li>
+            <li *ngFor="let dropdownMenu of dropdownMenus">
+                <a class="dropdown-item" href="#">{{dropdownMenu}}</a>
+            </li>
         </ul>
 
     </div>

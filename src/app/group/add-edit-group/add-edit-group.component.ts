@@ -15,6 +15,7 @@ export class AddEditGroupComponent implements OnInit{
   isGroupAddActive !: boolean;
   currentUrl !: string;
   isGroupEditActive !: boolean;
+  formHeading !: string ;
 
 
   ngOnInit(): void {
@@ -25,6 +26,7 @@ export class AddEditGroupComponent implements OnInit{
 
           if(this.currentUrl == '/group/add'){
             this.isGroupAddActive = true;
+            this.formHeading = 'Add Details';
           }
           else{
             this.isGroupAddActive = false;
@@ -32,10 +34,12 @@ export class AddEditGroupComponent implements OnInit{
 
           if(this.currentUrl == '/group/edit'){
             this.isGroupEditActive = true;
+            this.formHeading = 'Edit Details';
           }
           else{
             this.isGroupEditActive = false;
           }
+
 
   });
 
