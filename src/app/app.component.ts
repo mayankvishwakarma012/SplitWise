@@ -13,6 +13,10 @@ export class AppComponent implements OnInit {
   isLoginSignupActive !: boolean;
   isLoginActive !: boolean;
   isSignupActive !: boolean;
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 46dc628db563a946b02675cdf8c2c278912fda9a
   constructor(public router : Router){}
 
   ngOnInit(): void {
