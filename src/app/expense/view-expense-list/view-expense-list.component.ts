@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ViewExpenseListComponent {
 
+
+  expenses = ['Ram', 'Harry', 'Raj'];
+  amounts = [20,50,80]
 }
