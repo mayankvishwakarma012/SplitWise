@@ -2,7 +2,7 @@
 <div class="wrapper p-2">
 
     <!-- section to collapse  -->
-    <section class="container-fluid">
+    <section class="container-fluid" *ngIf="isGroupActive">
 
         <!-- section Header -->
         <div class="card card-header" data-bs-toggle="collapse" data-bs-target="#collapseGroup">
@@ -33,16 +33,32 @@
         </div>
 
         <!-- expenses of this roup will be displayed here -->
-        <div class="card card-body">
-            <h3>Expenses:</h3>
+        <div class="card card-body" data-bs-toggle="collapse" data-bs-target="#collapseExpense" routerLink="/dashboard/group/expense">
+            <div class="row">
+                <div class="col">
+
+                    <!-- collapse toggle on click on heading -->
+                    <h3 routerLink="/dashboard/group/expense" data-bs-toggle="collapse" data-bs-target="#collapseExpense">Expenses:</h3>
+                </div>
+                <div class="col text-end">
+                    <button class="btn btn-primary" routerLink="/dashboard/group/expense/add" data-bs-toggle="modal" data-bs-target="#addExpenseForm">Add Expense </button>
+                </div>
+            </div>
+            <!-- route if is expanse is active -->
+            <div class="row" *ngIf="isExpenseActive">
+                <div class="collapse" id="collapseExpense">
+                    <!-- expenses list goes here  -->
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
 
         </div>
     </section>
 
     <!--Edit Form Modal -->
-    <div class="modal fade" id="addEditForm" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
+    <div class="modal fade " id="addEditForm " tabindex="-1 ">
+        <div class="modal-dialog ">
+            <div class="modal-content ">
                 <app-add-edit-group></app-add-edit-group>
             </div>
         </div>

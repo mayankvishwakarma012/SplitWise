@@ -1,1 +1,65 @@
-<p>add-edit-expence works!</p>
+<!-- main container  -->
+<main class="p-3">
+
+    <div class="modal-header">
+        <h1>Add an Expense</h1>
+        <!-- close button -->
+        <button type="button" class="btn-close" data-bs-dismiss="modal" routerLink="/dashboard/group/expense">.</button>
+    </div>
+
+    <!-- Add expense form -->
+    <form>
+        <!-- form control -->
+        <div class="form-group mt-2">
+            <!-- description about expense -->
+            <label for="description">Description:</label>
+            <input type="text" class="form-control" id="description" name="description" required>
+        </div>
+
+        <!-- form control -->
+        <div class="form-group mt-2">
+            <!-- Amount of expense -->
+            <label for="amount">Amount:</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">INR</span>
+                </div>
+                <input type="number" class="form-control" id="amount" name="amount" min="0" required>
+            </div>
+        </div>
+
+        <!-- form control -->
+        <div class="form-group mt-2">
+            <!-- Expense date -->
+            <label for="date">Date:</label>
+            <input type="date" class="form-control" id="date" name="date" required>
+        </div>
+
+        <!-- form control -->
+        <div class="form-group mt-2">
+
+            <!-- split condition  -->
+            <label for="split">Split:</label>
+            <select class="form-control" id="split" name="split">
+          <option value="equal">Split equally</option>
+          <option value="unequal">Split unequally</option>
+          <option value="shares">Split by shares</option>
+        </select>
+        </div>
+
+        <!-- form control -->
+        <div class="form-group mt-2">
+            <!-- participants included -->
+            <label for="participants">Participants:</label>
+            <input type="text" class="form-control" id="participants" name="participants" required>
+        </div>
+
+        <!-- form control -->
+
+        <!-- submit -->
+        <button type="submit" class="btn btn-primary">Add Expense</button>
+
+        <!-- modal close button -->
+        <button type="button" class="btn btn-secondary">Cancel</button>
+    </form>
+</main>

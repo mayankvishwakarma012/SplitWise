@@ -24,7 +24,7 @@ export class AddEditGroupComponent implements OnInit{
     .subscribe((event: NavigationEnd) => {
           this.currentUrl = event.url;
 
-          if(this.currentUrl == '/group/add'){
+          if(this.currentUrl == '/dashboard/group/add'){
             this.isGroupAddActive = true;
             this.formHeading = 'Add Details';
           }
@@ -32,7 +32,7 @@ export class AddEditGroupComponent implements OnInit{
             this.isGroupAddActive = false;
           }
 
-          if(this.currentUrl == '/group/edit'){
+          if(this.currentUrl == 'dashboard/group/edit'){
             this.isGroupEditActive = true;
             this.formHeading = 'Edit Details';
           }

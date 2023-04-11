@@ -1,5 +1,27 @@
-<p>view-expense-list works!</p>
-<!-- demo links to show routings -->
-<a routerLink="./add">add</a><br>
-<a routerLink="./edit">edit</a>
-<router-outlet></router-outlet>
+<!-- Expense list to show expenses  -->
+<ul class="list-group">
+    <!-- header row  -->
+    <li class="list-group-item align-center fw-bold">
+        <div class="row">
+            <div class="col">Expense list</div>
+            <div class="col">Amount</div>
+        </div>
+    </li>
+
+    <!-- demo data from ts file -->
+    <li class="list-group-item" *ngFor="let expense of expenses; index as i">
+        <div class="row">
+            <div class="col">{{expense}}</div>
+            <div class="col">{{amounts[i]}} INR</div>
+        </div>
+    </li>
+</ul>
+
+<!-- modal to show add expanse form -->
+<div class="modal fade" id="addExpenseForm" tabindex="-1">
+    <div class="modal-dialog ">
+        <div class="modal-content ">
+            <app-add-edit-expence></app-add-edit-expence>
+        </div>
+    </div>
+</div>

@@ -9,7 +9,8 @@ const dashboardRoutes : Routes = [
   { path: '', component: ViewGroupListComponent, children:[
     { path: 'add', component: AddEditGroupComponent },
     { path: 'edit', component: AddEditGroupComponent },
-    { path: 'view', component: ViewGroupListComponent }
+    { path: 'view/:name', component: ViewGroupListComponent },
+    { path: 'expense', loadChildren: () => import('../expense/expense.module').then(m => m.ExpenseModule) }
 
   ] },
 

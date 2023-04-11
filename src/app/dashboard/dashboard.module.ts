@@ -5,7 +5,6 @@ import { DashboardComponent } from './dashboard.component';
 
 const dashboardRoutes : Routes = [
   { path: '', component: DashboardComponent,children:[
-  { path: 'expense', loadChildren: () => import('../expense/expense.module').then(m => m.ExpenseModule) },
   { path: 'friends', loadChildren: () => import('../friends/friends.module').then(m => m.FriendsModule) },
   { path: 'group', loadChildren: () => import('../group/group.module').then(m => m.GroupModule) },
   { path: 'settleup', loadChildren: () => import('../settle-up/settle-up.module').then(m => m.SettleUpModule) },
