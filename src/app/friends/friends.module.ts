@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './../app-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -23,6 +24,7 @@ const dashboardRoutes : Routes = [
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule ,
     RouterModule.forChild(dashboardRoutes)
   ],
   exports:[

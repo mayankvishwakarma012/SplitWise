@@ -1,5 +1,45 @@
-<p>view-friends-list works!</p>
-<!-- demo links to show routings -->
-<a routerLink="./add">add</a><br>
-<a routerLink="./edit">edit</a>
-<router-outlet></router-outlet>
+<!-- group view component to show on dashboard -->
+
+<div class="container-fluid p-0">
+    <!-- section to collapse  -->
+    <section class="container-fluid p-0" *ngIf="isFriendActive">
+
+        <!-- section Header -->
+        <div class="card card-header" data-bs-toggle="collapse" data-bs-target="#collapseGroup">
+            <!-- group name  -->
+            <h3>
+                Friend Name :
+                <!-- Friend name goes here  -->
+            </h3>
+        </div>
+
+        <!-- section body -->
+        <div class="collapse" id="collapseGroup">
+            <div class="card card-body">
+                <div class="d-flex">
+
+                    <!-- delete group button -->
+                    <button class="btn btn-primary m-1" type="button">Remove this friend</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- expenses of this roup will be displayed here -->
+        <div class="card card-body">
+            <h3>Expenses:</h3>
+
+            <!-- expense list goes here  -->
+
+        </div>
+    </section>
+
+    <!--Edit Form Modal -->
+    <div class="modal fade" id="addFriendForm" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <app-add-edit-friends></app-add-edit-friends>
+            </div>
+        </div>
+    </div>
+</div>
