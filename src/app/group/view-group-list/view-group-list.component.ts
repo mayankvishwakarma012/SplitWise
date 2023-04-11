@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-group-list',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./view-group-list.component.scss']
 })
 export class ViewGroupListComponent {
+  constructor(public router : Router){}
 
 }
