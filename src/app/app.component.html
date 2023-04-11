@@ -44,6 +44,7 @@
 <!-- menus after click on navbar menu -->
 <div class="collapse" id="navbarToggleExternalContent">
     <!-- if not login then show this -->
+
     <div class="bg-dark p-4 " *ngIf="isLoginSignupActive">
         <ul class="navbar-nav container">
             <li class="nav-item" *ngIf="!isLoginActive">
@@ -56,6 +57,7 @@
     </div>
 
     <!-- if login done then show this  -->
+
     <div class="bg-dark" *ngIf="!isLoginSignupActive">
 
         <ul class="navbar-nav text-white container  p-4">
