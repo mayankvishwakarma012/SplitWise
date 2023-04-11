@@ -82,11 +82,4 @@ export class AddEditGroupComponent implements OnInit{
     this.members.removeAt(i);
   }
 
-  onSubmit(){
-    // function for add new group
-  }
-  onUpdate(){
-    // funtion for edit details for group
-  }
-
 }
