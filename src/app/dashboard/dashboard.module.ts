@@ -1,4 +1,4 @@
-import { Routes , RouterModule } from '@angular/router';
+import { Routes , RouterModule, NavigationEnd, Router } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
@@ -25,4 +25,5 @@ const dashboardRoutes : Routes = [
     RouterModule
   ]
 })
-export class DashboardModule { }
+export class DashboardModule {
+  }
