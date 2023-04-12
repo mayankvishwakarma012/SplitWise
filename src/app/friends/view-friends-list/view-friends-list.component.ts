@@ -15,6 +15,7 @@ export class ViewFriendsListComponent {
   currentUrl !: string;
   isFriendActive : boolean = false;
   friendName: any;
+  isExpenseActive !: boolean;
 
   constructor(public router : Router, public route: ActivatedRoute){
 
@@ -32,9 +33,15 @@ export class ViewFriendsListComponent {
         .pipe(filter((e): e is NavigationEnd => e instanceof NavigationEnd))
         .subscribe((event: NavigationEnd) => {
               this.currentUrl = event.url;
+              if(this.currentUrl == '/dashboard/friends/expense'){
+                this.isExpenseActive = true;
+              }
+              else{
+                this.isExpenseActive = false;
+              }
 
               for (let friend of this.friends ){
-                if(this.currentUrl == '/friends'){
+                if(this.currentUrl == '/dashboard/friends/view/'+friend){
                 this.isFriendActive = true;
                 break;
               }

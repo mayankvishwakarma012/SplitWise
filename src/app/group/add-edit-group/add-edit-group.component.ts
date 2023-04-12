@@ -32,7 +32,7 @@ export class AddEditGroupComponent implements OnInit{
             this.isGroupAddActive = false;
           }
 
-          if(this.currentUrl == 'dashboard/group/edit'){
+          if(this.currentUrl == '/dashboard/group/edit'){
             this.isGroupEditActive = true;
             this.formHeading = 'Edit Details';
           }

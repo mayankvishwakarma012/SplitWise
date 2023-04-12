@@ -10,7 +10,8 @@ const dashboardRoutes : Routes = [
   { path: '', component: ViewFriendsListComponent,children:[
     { path: 'add', component: AddEditFriendsComponent },
   { path: 'edit', component: AddEditFriendsComponent },
-  { path: 'view', component: ViewFriendsListComponent }
+  { path: 'view/:name', component: ViewFriendsListComponent },
+  { path: 'expense', loadChildren: () => import('../expense/expense.module').then(m => m.ExpenseModule) }
   ]},
 
 
