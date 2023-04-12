@@ -41,7 +41,9 @@ export class ViewFriendsListComponent {
               }
 
               for (let friend of this.friends ){
+
                 if(this.currentUrl == '/dashboard/friends/view/'+friend){
+
                 this.isFriendActive = true;
                 break;
               }
