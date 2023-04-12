@@ -9,6 +9,7 @@ import { filter } from 'rxjs';
 })
 export class ViewGroupListComponent {
   groups = ['Friends', 'Trip', 'Weekend'];
+  friends = ['Ram', 'Harry', 'Raj'];
   groupName = this.route.snapshot.paramMap.get('name');
 
 /**variable to use as a active flag for components  */

@@ -9,8 +9,8 @@ import { filter } from 'rxjs';
 })
 export class DashboardComponent implements OnInit{
 
-  groups = ['Friends', 'Trip', 'Weekend'];
-  friends = ['Ram', 'Harry', 'Raj'];
+  groups = ['Friends'];
+  friends = ['Ram'];
   groupName: any;
 
   constructor(public router : Router , public route : ActivatedRoute) {}
@@ -21,6 +21,9 @@ export class DashboardComponent implements OnInit{
 
 
   ngOnInit(): void {
+    /** This instance of router is used for get current routing path
+         * to toggle the active flag for components
+         */
     this.router.events
     .pipe(filter((e): e is NavigationEnd => e instanceof NavigationEnd))
     .subscribe((event: NavigationEnd) => {
