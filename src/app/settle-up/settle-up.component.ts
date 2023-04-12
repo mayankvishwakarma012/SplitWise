@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class SettleUpComponent {
 
+  groups = ['Friends', 'Trip', 'Weekend'];
+  friends = ['Ram', 'Harry', 'Raj'];
 }

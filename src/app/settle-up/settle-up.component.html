@@ -1,1 +1,65 @@
-<p>settle-up works!</p>
+<div class="container card p-0">
+    <div class="card-header">
+        <h1>Settle Up</h1>
+    </div>
+
+    <div class="card m-5 ">
+        <div class=" card card-header group-info panel panel-default">
+            <div class="panel-heading">
+                <h2>Group Name : (Group name)</h2>
+            </div>
+            <div class="panel-body">
+                <p>Total Amount: (amount)</p>
+                <p>Number of Members: (number)</p>
+            </div>
+        </div>
+
+        <!-- settle-up form containier -->
+        <form action="#" method="post" class="card card-body form-horizontal">
+
+            <!-- one who pay -->
+            <div class="form-group mb-3">
+                <label for="payer" class="col-sm-2 control-label">Payer:</label>
+                <div class="col-sm-10">
+                    <select id="payer" name="payer" class="form-control">
+          <option value="you">You</option>
+          <option *ngFor="let friend of friends" [value]="friend">{{friend}}</option>
+        </select>
+                </div>
+            </div>
+
+            <!-- one who recieve -->
+            <div class="form-group mb-3">
+                <label for="receiver" class="col-sm-2 control-label">Receiver:</label>
+                <div class="col-sm-10">
+                    <select id="receiver" name="receiver" class="form-control">
+            <option *ngFor="let friend of friends" [value]="friend">{{friend}}</option>
+        </select>
+                </div>
+            </div>
+
+            <!-- amount -->
+            <div class="form-group mb-3">
+                <label for="amount" class="col-sm-2 control-label">Amount:</label>
+                <div class="col-sm-10 ">
+                    <input type="number" id="amount" name="amount" min="0" step="0.01" class="form-control" required>
+                </div>
+            </div>
+
+            <!-- any message -->
+            <div class="form-group mb-3">
+                <label for="description" class="col-sm-2 control-label">Description:</label>
+                <div class="col-sm-10">
+                    <input type="text" id="description" name="description" class="form-control" required>
+                </div>
+            </div>
+
+            <!-- submit -->
+            <div class="form-group mb-3">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary">Settle Up</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

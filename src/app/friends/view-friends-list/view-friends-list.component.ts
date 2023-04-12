@@ -34,7 +34,7 @@ export class ViewFriendsListComponent {
               this.currentUrl = event.url;
 
               for (let friend of this.friends ){
-                if(this.currentUrl == '/friends'){
+                if(this.currentUrl == '/dashboard/friends'){
                 this.isFriendActive = true;
                 break;
               }
