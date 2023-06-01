@@ -1,7 +1,7 @@
 <div class="container">
     <h2>Dashboard</h2>
     <!-- show owe/owed and total amount  -->
-    <nav class="border border-success">
+    <nav class="card card-header p-0">
         <div class="row text-center">
             <div class="col">
                 <h3>You owe</h3>
@@ -16,131 +16,105 @@
                 <p>500 INR</p>
             </div>
         </div>
-    </nav>
-    <div class="row">
-        <!-- Sidebar content goes here in desktop view -->
-        <nav class="col-md-3 p-2 d-none d-md-block bg-light sidebar">
 
-            <!-- Group Card -->
-            <div class="card mb-2">
-                <div class="card-header p-2">
-                    <div class="row">
-                        <div class="col col-auto text-start"><a class="text-black text-decoration-none" routerLink="/dashboard/group">Group</a></div>
-                        <div class="col col-sm text-end"><a class="btn btn-sm btn-outline-primary" routerLink="/dashboard/group/add" data-bs-toggle="modal" data-bs-target="#addEditForm">Add+</a></div>
-                    </div>
+        <!-- To show menus in dashboard -->
+        <div class="card card-body m-1 mb-0">
+            <div class="row text-center">
+                <div class="col">
+                    <a class="text-black text-decoration-none" routerLink="/dashboard/group" data-bs-toggle="modal"
+                        data-bs-target="#modalGroups">Group</a>
                 </div>
-                <div class="card-body">
-                    <ul class="list-group">
-                        <li class="list-group-item" *ngFor="let group of groups">
-                            <a class="text-decoration-none text-dark" [routerLink]="['/dashboard/group/view',group]" routerLinkActive="router-link-active">{{group}}</a>
-                        </li>
-                    </ul>
-
+                <div class="col">
+                    <a class="text-black text-decoration-none" routerLink="/dashboard/friends" data-bs-toggle="modal"
+                        data-bs-target="#modalFriends">Friends</a>
                 </div>
-            </div>
-
-            <!-- Friends Card -->
-            <div class="card mb-2">
-                <div class="card-header p-2">
-                    <div class="row">
-                        <div class="col col-auto text-start">
-                            <a class="text-black text-decoration-none" routerLink="/dashboard/friends">Friends</a>
-                        </div>
-                        <div class="col col-sm text-end"><a class="btn btn-sm btn-outline-primary" routerLink="/dashboard/friends/add" data-bs-toggle="modal" data-bs-target="#addFriendForm">Add+</a></div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <ul class="list-group">
-                        <li class="list-group-item" *ngFor="let friend of friends">
-                            <a class="text-decoration-none text-dark" class="text-decoration-none text-dark" [routerLink]="['/dashboard/friends/view',friend]">{{friend}}</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card mb-2">
-                <div class="card-header p-2">
+                <div class="col">
                     <a class="text-black text-decoration-none" routerLink="/dashboard/transaction">Transaction list</a>
                 </div>
             </div>
+        </div>
+    </nav>
+    <div class="row m-0">
 
-        </nav>
+        <!-- TODO show groups and friends in modal box -->
+        
+            <!-- Group modal in dashboard-->
+            <div class="modal fade p-0" id="modalGroups" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog w-100">
+                    <div class="modal-content p-2">
 
-        <!-- Sidebar content goes here in mobile view -->
-
-        <!-- group/friend list card -->
-        <nav class="col-12 d-md-none bg-light sidebar">
-            <div class="row ">
-                <div class="col col-sm">
-                    <!-- group card toggle button -->
-                    <button class="btn d-block d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#groupCollapse" routerLink="/dashboard/group">Group</button>
-                    <div class="collapse" id="groupCollapse">
-
-                        <!-- Group Card -->
                         <div class="card mb-2">
-                            <div class="card-header">
+                            <div class="card-header p-2">
                                 <div class="row">
-                                    <div class="col col-auto"><a class="text-black text-decoration-none" routerLink="/dashboard/group">Group</a></div>
-                                    <div class="col col-sm text-end"><a class="btn btn-sm btn-outline-primary" routerLink="/dashboard/group/add" data-bs-toggle="modal" data-bs-target="#addEditForm">Add+</a></div>
+                                    <div class="col col-auto text-start"><a class="text-black text-decoration-none"
+                                            routerLink="/dashboard/group">Group</a>
+                                    </div>
+                                    <div class="col col-sm text-end"><a class="btn btn-sm btn-outline-primary"
+                                            routerLink="/dashboard/group/add" data-bs-toggle="modal"
+                                            data-bs-target="#addEditForm">Add+</a>
+                                    </div>
+
                                 </div>
                             </div>
                             <div class="card-body">
-                                <ul class="list-group">
+                                <ul class="list-group list-unstyled">
                                     <li class="list-group-item" *ngFor="let group of groups">
-                                        <a class="text-decoration-none text-dark" [routerLink]="['/dashboard/group/view',group]" routerLinkActive="router-link-active">{{group}}</a>
+                                        <a class="text-decoration-none text-dark" data-bs-toggle="modal"
+                                            data-bs-target="#modalGroups" [routerLink]="['/dashboard/group/view',group]"
+                                            routerLinkActive="router-link-active">{{group}}</a>
                                     </li>
                                 </ul>
 
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col ">
-                    <button class="btn d-block d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#friendCollapse" routerLink="/dashboard/friends">Friend</button>
-                    <!-- Friends Card -->
-                    <div class="collapse" id="friendCollapse">
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="row">
-                                    <div class="col col-auto"><a class="text-black text-decoration-none">friends</a></div>
-                                    <div class="col col-sm text-end"><a class="btn btn-sm btn-outline-primary" routerLink="/dashboard/friends/add" data-bs-toggle="modal" data-bs-target="#addFriendForm">Add+</a></div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <ul class="list-group">
-                                    <li class="list-group-item" *ngFor="let friend of friends">
-                                        <a class="text-decoration-none text-dark" [routerLink]="['/dashboard/friends/view',friend]">{{friend}}</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
 
+                        </div>
+
+                    </div>
                 </div>
 
-                <div class="col col-sm ">
-                    <div class="card-header p-2">
-                        <a class="text-black text-decoration-none" routerLink="/dashboard/transaction">Transaction list</a>
-                    </div>
-                </div>
 
             </div>
 
+            <!-- Friends modal in dashboard -->
+            <div class="modal fade" id="modalFriends" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog w-100 w-sm-25">
+                    <div class="modal-content p-2">
+
+                        <div class="card mb-2">
+                            <div class="card-header p-2">
+                                <div class="row">
+                                    <div class="col col-auto text-start">
+                                        <a class="text-black text-decoration-none"
+                                            routerLink="/dashboard/friends">Friends</a>
+                                    </div>
+                                    <div class="col col-sm text-end"><a class="btn btn-sm btn-outline-primary"
+                                            routerLink="/dashboard/friends/add" data-bs-toggle="modal"
+                                            data-bs-target="#addFriendForm">Add+</a></div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group list-unstyled">
+                                    <li class="list-group-item" *ngFor="let friend of friends">
+                                        <a class="text-decoration-none text-dark" class="text-decoration-none text-dark"
+                                            data-bs-toggle="modal" data-bs-target="#modalFriends"
+                                            [routerLink]="['/dashboard/friends/view',friend]">{{friend}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
 
 
+            </div>
+        <!-- </nav> -->
 
-        </nav>
-
-        <main role="main" class=" col mt-2 p-0">
+        <main role="main" class="col m-0 mt-1 p-0">
             <!-- Main content goes here -->
 
-
-
-            <!-- show component in routing -->
+            <!-- show component through routing -->
             <router-outlet></router-outlet>
-
-
-
 
         </main>
 

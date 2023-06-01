@@ -1,8 +1,8 @@
 <!-- group view component to show on dashboard -->
-<div class="wrapper">
+<div class="wrapper p-0">
 
     <!-- section to collapse  -->
-    <section class="container-fluid" *ngIf="isGroupActive">
+    <section class="container-fluid p-0" *ngIf="isGroupActive">
 
         <!-- section Header -->
         <div class="card card-header" data-bs-toggle="collapse" data-bs-target="#collapseGroup">
@@ -31,28 +31,35 @@
                 </ul>
                 <!-- List of members added to this group gs here  -->
 
-                <div class="d-flex">
-
+                <div class=" card-footer d-block">
                     <!-- Edit group button -->
-                    <button class="btn btn-primary m-1" type="button" routerLink="/dashboard/group/edit" data-bs-toggle="modal" data-bs-target="#addEditForm">Edit</button>
-                    <button class="btn btn-primary m-1" type="button">Delete</button>
+                    <small>Manage Group Details Here... </small>
+                    <div class="d-flex">
+                        <button class="btn btn-primary m-1" type="button" routerLink="/dashboard/group/edit"
+                            data-bs-toggle="modal" data-bs-target="#addEditForm">Edit</button>
+                        <button class="btn btn-primary m-1" type="button">Delete</button>
+                    </div>
                 </div>
 
             </div>
         </div>
 
         <!-- expenses of this group will be displayed here -->
-        <div class="card card-body" data-bs-toggle="collapse" data-bs-target="#collapseExpense" routerLink="/dashboard/group/expense">
+        <div class="card card-body" data-bs-toggle="collapse" data-bs-target="#collapseExpense"
+            routerLink="/dashboard/group/expense">
             <div class="row">
                 <div class="col">
                     <!-- collapse toggle on click on heading -->
-                    <h3 routerLink="/dashboard/group/expense" data-bs-toggle="collapse" data-bs-target="#collapseExpense">Expenses:</h3>
+                    <h3 routerLink="/dashboard/group/expense" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExpense">Expenses:</h3>
+                    <small>Click here to see the Expenses</small>
                 </div>
                 <div class="col text-end">
-                    <button class="btn btn-primary" routerLink="/dashboard/group/expense/add" data-bs-toggle="modal" data-bs-target="#addExpenseForm">Add Expense </button>
+                    <button class="btn btn-primary" routerLink="/dashboard/group/expense/add" data-bs-toggle="modal"
+                        data-bs-target="#addExpenseForm">Add Expense </button>
                 </div>
             </div>
-            <!-- route if is expanse is active -->
+            <!-- route if isExpanse is active -->
             <div class="row" *ngIf="isExpenseActive">
                 <div class="collapse" id="collapseExpense">
                     <!-- expenses list goes here  -->
