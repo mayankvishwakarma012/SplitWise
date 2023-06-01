@@ -8,8 +8,9 @@ import { filter } from 'rxjs';
   styleUrls: ['./view-group-list.component.scss']
 })
 export class ViewGroupListComponent {
-  groups = ['Friends', 'Trip', 'Weekend'];
-  friends = ['Ram', 'Harry', 'Raj'];
+  currentGroup !: string; 
+  groups = ['Friends','college','trip','school'];
+  friends = ['Ram','raj','ravi','abhi','amit'];
   groupName = this.route.snapshot.paramMap.get('name');
 
 /**variable to use as a active flag for components  */

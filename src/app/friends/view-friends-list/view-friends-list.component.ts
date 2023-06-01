@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs';
 
@@ -7,25 +7,26 @@ import { filter } from 'rxjs';
   templateUrl: './view-friends-list.component.html',
   styleUrls: ['./view-friends-list.component.scss']
 })
-export class ViewFriendsListComponent {
+export class ViewFriendsListComponent{
 
 
-  friends = ['Ram', 'Harry', 'Raj'];
+  friends = ['Ram','raj','ravi','abhi','amit'];
 
   currentUrl !: string;
   isFriendActive : boolean = false;
   friendName: any;
   isExpenseActive !: boolean;
 
-  constructor(public router : Router, public route: ActivatedRoute){
+  constructor(public router : Router, private route: ActivatedRoute){
 
     /** Using this instance of route can get the value of routing parameter.
      * and store it in friendName variable */
 
-        this.route.params.subscribe(params => {
+        this.route.queryParams.subscribe(params => {
+          console.log(params['name']);
           this.friendName = params['name'];
         });
-
+        
         /** This instance of router is used for get current routing path
          * to toggle the active flag for components
          */
@@ -50,5 +51,6 @@ export class ViewFriendsListComponent {
             }
           });
   }
+  
 
 }

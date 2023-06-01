@@ -9,8 +9,8 @@ import { filter } from 'rxjs';
 })
 export class DashboardComponent implements OnInit{
 
-  groups = ['Friends'];
-  friends = ['Ram'];
+  groups = ['Friends','college','trip','school'];
+  friends = ['Ram','raj','ravi','abhi','amit'];
   groupName: any;
 
   constructor(public router : Router , public route : ActivatedRoute) {}
@@ -24,6 +24,8 @@ export class DashboardComponent implements OnInit{
     /** This instance of router is used for get current routing path
          * to toggle the active flag for components
          */
+
+    
     this.router.events
     .pipe(filter((e): e is NavigationEnd => e instanceof NavigationEnd))
     .subscribe((event: NavigationEnd) => {
@@ -43,9 +45,19 @@ export class DashboardComponent implements OnInit{
             this.isGroupEditActive = false;
           }
 
-          this.groupName = this.route.snapshot.paramMap.get('name');
+          console.log(this.currentUrl)
 
   });
+
+
+  this.route.queryParams.subscribe(params => {
+    console.log(params['name']);
+   console.log( this.currentUrl)
+    // this.friendName = params['name'];
+  });
+  console.log(
+    this.route.snapshot.paramMap
+    )
 
 
   }
